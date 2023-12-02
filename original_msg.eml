@@ -1,0 +1,102 @@
+Delivered-To: pugal.a@gmail.com
+Received: by 2002:adf:ed50:0:b0:332:d285:89f8 with SMTP id u16csp1283127wro;
+        Fri, 24 Nov 2023 23:56:26 -0800 (PST)
+X-Received: by 2002:a6b:c901:0:b0:7a9:77ac:5454 with SMTP id z1-20020a6bc901000000b007a977ac5454mr854139iof.18.1700898986527;
+        Fri, 24 Nov 2023 23:56:26 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1700898986; cv=none;
+        d=google.com; s=arc-20160816;
+        b=V0EozAp67sZjKyC9mhsJk7OPZrmvV5rnSUXtuCdHKZ7qwDMGfe+3p5HYOet8mGp5vN
+         dcek8qcky/Z1qrVKv53epXu0O87kzgXJMCrg8H8hCMZzJT4bGLmcKCdMBTmE2/2udlQq
+         MLH/ZbgMcuEqTmjhH3iPtEy3Q8LnknpwuKKo6FBqS26gRYjCebSpf1A7IPC6WmYK/Vyl
+         /Gz5DnbFOLVcL8pZp6rgzojCbQBpoG+2h82GEcXeo17SIzjPRv8lPdVMjnVtg4HqznEd
+         rbg89TGFVKo6okwbt+zBQ9QYuoNQhLBI+bfjOnA7CTSVlKYxtAo/5XxAffrIR9wuAygF
+         JOXA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=UoRM7i6gDbGY0E+QhwgWDE2ast0WoXIgbyPqwFKIa3s=;
+        fh=95DHRlj3Vqxdfcnz8oUoUm52iNLYj6hxO2ywVsMzy5o=;
+        b=Mb1F7qRvlt/SUXX5fkGkGKKMBC1jTC7u+++3SoeF8anyeHmNMDpLKa+/FBt+cfEjBN
+         R8VwWYbHMJSF5rLqtQ39+Q8jDBMyV6fOieAYmDFlku9uUEbAi50t5MJ4RIWtlASzjhQ7
+         RcxQIhslehKAR/0aYTEIUfPg2jTo6I/lajp+mOHpT+1KJ2k7HHtUEt5+KSC08eMC8f9I
+         v4Mazo8tHAFWM/c/BejIbXLeX9TxyGQhdiF1nFat2cwOfLMdt8XyK70VUqpL+BKFdG8h
+         mTtNgRB8+N3FFQ2D9NANXEXO5LxBtq3PM2Y+I++WVSBNRA8zhGz4Ym+Lr3bS391S19qm
+         ka1Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="V/12yzm4";
+       spf=pass (google.com: domain of ramsudhirn1@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=ramsudhirn1@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <ramsudhirn1@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id z7-20020a6b6507000000b007b384ce2efbsor459887iob.11.2023.11.24.23.56.26
+        for <pugal.a@gmail.com>
+        (Google Transport Security);
+        Fri, 24 Nov 2023 23:56:26 -0800 (PST)
+Received-SPF: pass (google.com: domain of ramsudhirn1@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b="V/12yzm4";
+       spf=pass (google.com: domain of ramsudhirn1@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=ramsudhirn1@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1700898986; x=1701503786; dara=google.com;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=UoRM7i6gDbGY0E+QhwgWDE2ast0WoXIgbyPqwFKIa3s=;
+        b=V/12yzm4se7SYmt/06fZ9aYbJral9TGCGyxpFi/T4kOf4RobaWMAchQrdcFFd0P92H
+         5jNmWc0ukC0uWivRqp64/qakfjcXs6OYcdAxlGt88QbG/TwDKGyFb//WCDWjpcXw37Ek
+         TV5W5MNSE4b8/+V9QNBfZrBnmKtgVAR0DU0NPQxVQ0sJ2UIJGhPFROxOj7mRsnMe7VvG
+         MgBISF9VwmOLmZiCboNsEyP16kXaAA7+ZVGN0c9WBMxoURX67hnccKq+HOBbDNpuP9KX
+         wxAzC+wTtB347uRQAoQhWzKaUOyIBRPazu/JqPG8lwgxWIW2/YOmtukiQNmx4zZ3ANfW
+         xUuA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1700898986; x=1701503786;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=UoRM7i6gDbGY0E+QhwgWDE2ast0WoXIgbyPqwFKIa3s=;
+        b=e4byV3fkhwq8r7SLVOl5KWXPHVZdLFDroT73WblI/tiNf6jDQ4mgkV9iAkC4ZXIw5j
+         ahSz7f7R64jHkGIXsYuz73Kc3LtCT+ZHrSiEjGDP//Y16YXYNdCM6NVrnjg0k0Mi79qL
+         EXOndclLdErxEjBMjkwEPljNYucTcPKOG779yrrD0bSSChAEZj2gcvIXyk9ewXwXOI/t
+         Ex12bjkatVTwqvIDZ+Tzmbz0COSUMO1NPpdj2cU43qXiR9p3qz9AmKIcf3qZ0Sy/WmeR
+         GS66/AI3G4wm3yp142YEnV8WJPFG2gIj3cr7/mHeoR6nPuuot3NkOYmnv4kfVpMw5++h
+         UUmg==
+X-Gm-Message-State: AOJu0Yw3bVZjNg/aju3j3jbUq8Rel/48d1m5ppHp08wH7hiuYyV07ioB
+	UioCqE2Ev26NpQkmK30wp/ZFFMOIrmI/DSX1UkHscDqpw5U=
+X-Google-Smtp-Source: AGHT+IFP56uuQEsUzY1zlEYRz7hSHXUhAsumiupys5WxgOP12od17ALpDMBQj3A04x9zXE6Vr7agJB3jYMPWH/iU3JU=
+X-Received: by 2002:a05:6e02:16c7:b0:359:5d03:fad3 with SMTP id
+ 7-20020a056e0216c700b003595d03fad3mr8271391ilx.25.1700898985810; Fri, 24 Nov
+ 2023 23:56:25 -0800 (PST)
+MIME-Version: 1.0
+From: "ramsudhir.n" <ramsudhir.n@gmail.com>
+Date: Sat, 25 Nov 2023 13:26:21 +0530
+Message-ID: <CADs0Vmv+0Z=KczGDAuBNgpMoe-_aQ4C-zWY-QBS2PK6cfm-z5Q@mail.gmail.com>
+Subject: 
+To: "pugal. a" <pugal.a@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000d91f5a060af56754"
+
+--000000000000d91f5a060af56754
+Content-Type: text/plain; charset="UTF-8"
+
+The following  additional subcategories can be created under User forms
+
+1.  RBI Notices
+2.  RBI Advisories
+3.  Cyber Securities
+4.  Customer Education
+5.  Special Services
+6.  Compliances
+7.  Samata Communications
+8.  Public circulars
+9.  Service Alerts
+
+--000000000000d91f5a060af56754
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">The following=C2=A0 additional subcategories=C2=A0can be c=
+reated under User forms<div><br></div><div>1.=C2=A0 RBI Notices</div><div>2=
+.=C2=A0 RBI Advisories</div><div>3.=C2=A0 Cyber Securities</div><div>4.=C2=
+=A0 Customer Education</div><div>5.=C2=A0 Special Services</div><div>6.=C2=
+=A0 Compliances<br><div>7.=C2=A0 Samata Communications</div></div><div>8.=
+=C2=A0 Public circulars</div><div>9.=C2=A0 Service Alerts</div><div><br></d=
+iv><div><br></div></div>
+
+--000000000000d91f5a060af56754--

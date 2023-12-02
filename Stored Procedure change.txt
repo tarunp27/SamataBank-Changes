@@ -1,0 +1,39 @@
+USE [TestDB]
+GO
+/****** Object:  StoredProcedure [dbo].[spGetMasterFileDetails]    Script Date: 02-12-2023 06:51:32 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spGetMasterFileDetails](
+      @userid nvarchar(50)='User Forms',
+ @mstrfiletype nvarchar(50)='Account Opening',
+ @searchtext nvarchar(50) = 'op'
+)
+AS
+declare @name_search varchar(50) =''
+BEGIN
+set  @name_search='%'+upper(@searchtext)+'%'
+SELECT  [mstr_file_id]
+ ,[mstr_file_category]
+ ,[mstr_created_by]
+ ,[mstr_file_type]
+ ,[mstr_file_name]
+ ,[mstr_file_path]
+ ,[mstr_file_description]
+ ,CONVERT(NVARCHAR, [mstr_start_date], 106) as 'mstr_start_date'
+ ,[mster_end_date]
+ ,[mstr_file_order]
+ FROM [dbo].[mstr_files]
+ WHERE (@userid ='User Forms'  AND [mstr_file_category] =  @userid    AND (mstr_file_type = @mstrfiletype or @mstrfiletype = '')
+ and upper(mstr_file_name) like @name_search)    or
+(@userid =  [mstr_file_category]  and  @userid =  'Employee Forms' ) or
+(@userid =  [mstr_file_category]  and @userid <>'User Forms') OR (@userid =  'UploadDoc'  )
+ ORDER BY mstr_file_type, mstr_file_order
+
+--If Userid is Employee forms - No filtration except  Employee forms
+--If Userid is UploadDoc  No filtration at all
+--if Userid is UserForms then file type filter and desc filter applied
+--Other cases with respective user id file types are displayed.
+      SET NOCOUNT OFF    
+END
